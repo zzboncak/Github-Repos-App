@@ -19,3 +19,7 @@ button:hover {
 .results>a {
     line-height: 2;
 }
+
+.hidden {
+    display: none;
+}

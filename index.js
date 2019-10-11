@@ -31,6 +31,7 @@ function listRepos(array) {
         $('.results').append(element);
         //console.log(repo.name);
     }
+    $('.results-container').removeClass('hidden');
 }
 
 $(watchForm);
