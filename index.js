@@ -6,15 +6,20 @@ function watchForm(){
         
         let url = `https://api.github.com/users/${username}/repos`;
     
-        fetch(url)
+        if (username == ""){
+            alert(`Please insert a username`);
+        }else{
+            fetch(url)
             .then(response => {
-                if(reponse.ok){
+                console.log(response);
+                if(response.ok){
                     return response.json();
                 }
-                throw new Error(`This is an error`)
+                throw new Error(response.statusText)
             })
             .then(responseJson => listRepos(responseJson))
-            .catch(error => console.log(`Something went wrong`));
+            .catch(error => console.log(`Something went wrong: ${error.message}`));
+        }
     });
 }
 
